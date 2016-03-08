@@ -75,6 +75,7 @@ var Component = React.createClass({
 
               <View style={styles.buttonView}>
                 <TouchableOpacity onPress={() => {
+                    if(this.props.onCancel) this.props.onCancel();
                     this.setState({modalVisible: false});
                 }}>
                   <Text style={{color:this.state.buttonColor}}>Cancel</Text>
