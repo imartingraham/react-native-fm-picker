@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peter4k/React-Native-FMPicker.git"
+    "url": "git+https://github.com/orhan/React-Native-FMPicker.git"
   },
   "keywords": [
     "React-Native",
@@ -18,7 +18,7 @@
   "author": "Yi Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/peter4k/React-Native-FMPicker/issues"
+    "url": "https://github.com/orhan/React-Native-FMPicker/issues"
   },
-  "homepage": "https://github.com/peter4k/React-Native-FMPicker#readme"
+  "homepage": "https://github.com/orhan/React-Native-FMPicker#readme"
 }
