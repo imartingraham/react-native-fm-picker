@@ -28,7 +28,7 @@ var Component = React.createClass({
         color: this.props.color || '#007AFF',
         pickerBackgroundColor: this.props.pickerBackgroundColor || '#F5FCFF',
         modalVisible: false,
-        selectedOption: this.state.selectedValue || this.props.options[0],
+        selectedOption: this.props.selectedValue || this.props.options[0],
         pickerHeight: 0,
         buttonColor: this.props.buttonColor || '#007AFF',
       };
