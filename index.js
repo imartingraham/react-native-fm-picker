@@ -3,13 +3,13 @@
 
 var React = require('react-native');
 var {
-    StyleSheet,
-    Text,
-    View,
-    TouchableOpacity,
-    Modal,
-    PickerIOS,
-    Dimensions
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Modal,
+  PickerIOS,
+  Dimensions
 } = React;
 
 var PickerItemIOS = PickerIOS.Item;
@@ -63,7 +63,7 @@ var Component = React.createClass({
     render: function() {
       return (
         <Modal
-          animated={true}
+          animationType="slide"
           transparent={true}
           visible={this.state.modalVisible}>
 
