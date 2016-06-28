@@ -43,7 +43,7 @@ var Component = React.createClass({
         options: nextProps.options,
         labels: nextProps.labels || nextProps.options,
       })
-    }
+    },
 
     measurePickerHeight() {
       if (this.refs && this.refs.pickerView && this.state.pickerHeight == 0) {
