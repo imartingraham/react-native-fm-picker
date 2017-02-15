@@ -85,13 +85,13 @@ var Component = React.createClass({
                     if(this.props.onCancel) this.props.onCancel();
                     this.setState({modalVisible: false});
                 }}>
-                  <Text style={{color:this.state.buttonColor}}>Cancel</Text>
+                  <Text style={{color:this.state.buttonColor}}>{this.props.labelCancel || 'Cancel'}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
                     if(this.props.onSubmit) this.props.onSubmit(this.state.selectedOption);
                     this.setState({modalVisible: false});
                 }}>
-                  <Text style={{color:this.state.buttonColor}}>Confirm</Text>
+                  <Text style={{color:this.state.buttonColor}}>{this.props.labelSubmit || 'Confirm'}</Text>
                 </TouchableOpacity>
               </View>
 
