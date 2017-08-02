@@ -1,6 +1,8 @@
 'use strict';
 
-import React from 'react';
+/* --- Imports --- */
+
+import React, {Component} from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,16 +13,20 @@ import {
   Dimensions
 } from 'react-native';
 
+
+/* --- Constants --- */
+
 const PickerItemIOS = PickerIOS.Item;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
-const Component = React.createClass({
-  show: function(){
-    this.setState({modalVisible: true});
-  },
 
-  getInitialState: function(){
-    return {
+/* --- Component --- */
+
+export default class FMPicker extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       options: this.props.options,
       labels: this.props.labels || this.props.options,
       color: this.props.color || '#007AFF',
@@ -28,28 +34,32 @@ const Component = React.createClass({
       modalVisible: false,
       selectedOption: this.props.selectedValue || this.props.options[0],
       pickerHeight: 0,
-      buttonColor: this.props.buttonColor || '#007AFF',
+      buttonColor: '#007AFF' || this.props.buttonColor,
     };
-  },
+  }
+
+  show() {
+    this.setState({modalVisible: true});
+  }
 
   componentDidUpdate() {
     this.measurePickerHeight();
-  },
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       options: nextProps.options,
       labels: nextProps.labels || nextProps.options,
     })
-  },
+  }
 
   measurePickerHeight() {
-    if (this.refs && this.refs.pickerView && this.state.pickerHeight == 0) {
+    if (this.refs && this.refs.pickerView && this.state.pickerHeight === 0) {
       this.refs.pickerView.measure((a, b, width, height, px,py ) => {
         this.setState({pickerHeight: height});
       });
     }
-  },
+  }
 
   renderBackground() {
     if (this.props.renderBackground) {
@@ -61,9 +71,9 @@ const Component = React.createClass({
     } else {
       return null;
     }
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <Modal
         animationType="slide"
@@ -87,7 +97,7 @@ const Component = React.createClass({
                   this.setState({modalVisible: false});
                 }}
                 >
-                <Text style={{color:this.state.buttonColor}}>{this.props.labelCancel ? this.props.labelCancel : 'Cancel'}</Text>
+                <Text style={{color: this.state.buttonColor}}>{this.props.labelCancel ? this.props.labelCancel : 'Cancel'}</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
@@ -131,9 +141,12 @@ const Component = React.createClass({
       </Modal>
     );
   }
-});
+}
 
-let styles = StyleSheet.create({
+
+/* --- Stylesheet --- */
+
+const styles = StyleSheet.create({
   basicContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -171,5 +184,3 @@ let styles = StyleSheet.create({
     width: SCREEN_WIDTH,
   },
 });
-
-module.exports = Component;
