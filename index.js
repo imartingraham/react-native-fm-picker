@@ -29,12 +29,11 @@ export default class FMPicker extends Component {
     this.state = {
       options: this.props.options,
       labels: this.props.labels || this.props.options,
-      color: this.props.color || '#007AFF',
-      pickerBackgroundColor: this.props.pickerBackgroundColor || '#F5FCFF',
       modalVisible: false,
       selectedOption: this.props.selectedValue || this.props.options[0],
       pickerHeight: 0,
       buttonColor: this.props.buttonColor || '#007AFF',
+      pickerBackgroundColor: this.props.pickerBackgroundColor || '#F5FCFF',
     };
   }
 
@@ -109,7 +108,7 @@ export default class FMPicker extends Component {
                   this.setState({modalVisible: false});
                 }}
                 >
-                <Text style={{color:this.state.buttonColor}}>{this.props.labelSubmit ? this.props.labelSubmit : 'Confirm'}</Text>
+                <Text style={{color: this.state.buttonColor}}>{this.props.labelSubmit ? this.props.labelSubmit : 'Confirm'}</Text>
               </TouchableOpacity>
             </View>
 
