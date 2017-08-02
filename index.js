@@ -34,7 +34,7 @@ export default class FMPicker extends Component {
       modalVisible: false,
       selectedOption: this.props.selectedValue || this.props.options[0],
       pickerHeight: 0,
-      buttonColor: '#007AFF' || this.props.buttonColor,
+      buttonColor: this.props.buttonColor || '#007AFF',
     };
   }
 
